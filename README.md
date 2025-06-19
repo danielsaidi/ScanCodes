@@ -16,7 +16,7 @@
 ScanCodes is a Swift library with scan code features, such as a ``ScanCode`` SwiftUI view that can render any string value as a scan code.
 
 <p align="center">
-    <img src="https://github.com/danielsaidi/ScanCodes/releases/download/0.1.0/ScanCodes-Demo.gif" alt="Demo Gif" width="300" />
+    <img src="https://github.com/danielsaidi/ScanCodes/releases/download/0.1.0/ScanCodes-Demo-Picker.gif" alt="Demo Gif" width="300" />
 </p>
 
 ScanCodes extends ``Image`` as well as platform-specific image types with scan code-related functionality, and has a ``ScanCodeType`` enum that defines all supported scan code types.

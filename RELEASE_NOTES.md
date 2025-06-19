@@ -1,6 +1,6 @@
 # Release Notes
 
-VideoKit will use semver after 1.0. 
+ScanCodes will use semver after 1.0. 
 
 Until then, breaking changes can happen in any version, and deprecations may be removed in any minor version bump.
 
