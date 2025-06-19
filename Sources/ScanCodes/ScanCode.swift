@@ -19,7 +19,7 @@ public struct ScanCode: View {
     ///   - type: The scan code type to use.
     ///   - scale: The scale to apply to the image, by default `1`.
     ///   - rotation: The radian rotation to apply to the image, by default `0`.
-    init?(
+    public init(
         value: String,
         type: ScanCodeType,
         scale: CGFloat = 1,
@@ -42,7 +42,7 @@ public struct ScanCode: View {
             type: type,
             scale: scale,
             rotation: rotation
-        )
+        )?.resizable().scaledToFit()
     }
 }
 
