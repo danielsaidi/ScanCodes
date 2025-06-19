@@ -6,6 +6,7 @@
 //  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
+#if !os(watchOS)
 import SwiftUI
 
 /// This view can be used to display a scan code for a value.
@@ -55,3 +56,4 @@ public struct ScanCode: View {
         ScanCode(value: "123456789", type: .qr, scale: 5)
     }
 }
+#endif

@@ -6,7 +6,7 @@
 //  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS) || os(macOS)
+#if !os(watchOS) 
 import SwiftUI
 
 public extension Image {
