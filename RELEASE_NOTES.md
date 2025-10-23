@@ -5,6 +5,12 @@ ScanCodes will use semver after 1.0.
 Until then, breaking changes can happen in any version, and deprecations may be removed in any minor version bump.
 
 
+## 0.2
+
+This version bumps the package to Swift 6.1 and makes the demo app target iOS 26.
+
+
+
 ## 0.1
 
 This is the first public release of ScanCodes.
