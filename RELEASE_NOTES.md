@@ -1,8 +1,8 @@
 # Release Notes
 
-ScanCodes will use semver after 1.0. 
+[ScanCodes](https://github.com/danielsaidi/ScanCodes) will use semver after 1.0.
 
-Until then, breaking changes can happen in any version, and deprecations may be removed in any minor version bump.
+Until then, breaking changes can happen any minor version bump.
 
 
 ## 0.2
