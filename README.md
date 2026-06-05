@@ -6,7 +6,7 @@
     <img src="https://img.shields.io/github/v/release/danielsaidi/ScanCodes?color=%2300550&sort=semver" alt="Version" />
     <img src="https://img.shields.io/badge/swift-6.1-orange.svg" alt="Swift 6.1" />
     <a href="https://danielsaidi.github.io/ScanCodes"><img src="https://img.shields.io/badge/documentation-web-blue.svg" alt="Documentation" /></a>
-    <a href="https://github.com/danielsaidi/ScanCodes/blob/master/LICENSE"><img src="https://img.shields.io/github/license/danielsaidi/ScanCodes" alt="MIT License" /></a>
+    <a href="https://github.com/danielsaidi/ScanCodes/blob/main/LICENSE"><img src="https://img.shields.io/github/license/danielsaidi/ScanCodes" alt="MIT License" /></a>
 </p>
 
 
