@@ -55,7 +55,7 @@ public struct CodeScannerView<Viewfinder: View>: View {
     }
 }
 
-fileprivate struct CodeScannerInternal: UIViewRepresentable {
+private struct CodeScannerInternal: UIViewRepresentable {
 
     @Binding var barcode: String?
 
