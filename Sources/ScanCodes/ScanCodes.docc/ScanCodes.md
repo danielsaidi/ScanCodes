@@ -91,6 +91,12 @@ ScanCodes is available under the MIT license.
 - ``ScanCode``
 - ``ScanCodeType``
 
+### Scanners
+
+- ``CodeScannerView``
+- ``CodeScannerViewfinder``
+- ``CodeScannerViewfinderStyle``
+
 
 
 [Email]: mailto:daniel.saidi@gmail.com

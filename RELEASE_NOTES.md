@@ -12,6 +12,8 @@ This version adds bar code scanner views and support for "CIRoundedQRCodeGenerat
 ### ✨ Features
 
 * `ScanCodeType` has a new `.qrRounded` scan code type.
+* `CodeScannerView` is a new code scanner view.
+* `CodeScannerViewfinder` is a new code scanner overlay view.
 
 
 
