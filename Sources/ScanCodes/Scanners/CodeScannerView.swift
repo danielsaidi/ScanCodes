@@ -5,6 +5,7 @@
 //  Created by Daniel Saidi on 2026-06-06.
 //
 
+#if os(iOS)
 @preconcurrency import AVFoundation
 
 import SwiftUI
@@ -136,3 +137,4 @@ extension CodeScannerInternal {
         }
     }
 }
+#endif

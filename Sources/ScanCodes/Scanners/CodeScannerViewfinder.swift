@@ -5,6 +5,7 @@
 //  Created by Daniel Saidi on 2026-06-09.
 //
 
+#if os(iOS)
 import SwiftUI
 
 /// This view can be used as an overlay to ``CodeScannerView``
@@ -160,3 +161,4 @@ private struct CornerBrackets: Shape {
         .background(Color.gray)
         .codeScannerViewfinderStyle(.init(color: .yellow, lineWidth: 4, pulseInterval: 1.5))
 }
+#endif
