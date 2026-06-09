@@ -13,9 +13,9 @@ import SwiftUI
 /// This view can be used to open the device camera, to look
 /// for codes to scan.
 ///
-/// The `barcode` string binding is set when a code is found.
-/// The view will then stop looking for codes until the code
-/// is set to `nil`, e.g. when the app has retained it.
+/// The `code` binding is set when a code is found. The view
+/// will then stop looking for new codes until this value is
+/// set to `nil`, e.g. when the app has retained it.
 ///
 /// The ``CodeScannerViewfinder`` overlay can be styled with
 /// ``SwiftUICore/View/CodeScannerViewfinderStyle(_:)``. The
@@ -25,40 +25,40 @@ public struct CodeScannerView<Viewfinder: View>: View {
     /// Create a code scanner view.
     ///
     /// - Parameters:
-    ///   - barcode: The binding to write scanned codes to.
+    ///   - code: The binding to write scanned codes to.
     ///   - viewfinder: The viewfinder view to use as overlay.
     public init(
-        barcode: Binding<String?>,
+        code: Binding<String?>,
         viewfinder: @escaping () -> Viewfinder
     ) {
-        self._barcode = barcode
+        self._code = code
         self.viewfinder = viewfinder
     }
 
     /// Create a code scanner view with a standard viewfinder.
     ///
     /// - Parameters:
-    ///   - barcode: The binding to write scanned codes to.
+    ///   - code: The binding to write scanned codes to.
     public init(
-        barcode: Binding<String?>
+        code: Binding<String?>
     ) where Viewfinder == CodeScannerViewfinder {
-        self._barcode = barcode
+        self._code = code
         self.viewfinder = { CodeScannerViewfinder() }
     }
 
-    @Binding var barcode: String?
+    @Binding var code: String?
 
     let viewfinder: () -> Viewfinder
 
     public var body: some View {
-        CodeScannerInternal(barcode: $barcode)
+        CodeScannerInternal(code: $code)
             .overlay { viewfinder() }
     }
 }
 
 private struct CodeScannerInternal: UIViewRepresentable {
 
-    @Binding var barcode: String?
+    @Binding var code: String?
 
     final class VideoPreview: UIView {
 
@@ -71,7 +71,7 @@ private struct CodeScannerInternal: UIViewRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(barcode: $barcode)
+        Coordinator(code: $code)
     }
 
     func makeUIView(context: Context) -> VideoPreview {
@@ -107,7 +107,7 @@ private struct CodeScannerInternal: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: VideoPreview, context: Context) {
-        context.coordinator.barcode = $barcode
+        context.coordinator.code = $code
     }
 }
 
@@ -115,12 +115,12 @@ extension CodeScannerInternal {
 
     final class Coordinator: NSObject, AVCaptureMetadataOutputObjectsDelegate {
 
-        var barcode: Binding<String?>
+        var code: Binding<String?>
         var session: AVCaptureSession?
         var previewLayer: AVCaptureVideoPreviewLayer?
 
-        init(barcode: Binding<String?>) {
-            self.barcode = barcode
+        init(code: Binding<String?>) {
+            self.code = code
         }
 
         func metadataOutput(
@@ -129,11 +129,11 @@ extension CodeScannerInternal {
             from connection: AVCaptureConnection
         ) {
             guard
-                barcode.wrappedValue == nil,
+                code.wrappedValue == nil,
                 let object = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
                 let value = object.stringValue
             else { return }
-            barcode.wrappedValue = value
+            code.wrappedValue = value
         }
     }
 }
