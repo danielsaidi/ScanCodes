@@ -5,6 +5,16 @@
 Until then, breaking changes can happen any minor version bump.
 
 
+## 0.3
+
+This version adds bar code scanner views and support for "CIRoundedQRCodeGenerator".
+
+### ✨ Features
+
+* `ScanCodeType` has a new `.qrRounded` scan code type.
+
+
+
 ## 0.2
 
 This version bumps the package to Swift 6.1 and makes the demo app target iOS 26.
@@ -15,7 +25,7 @@ This version bumps the package to Swift 6.1 and makes the demo app target iOS 26
 
 This is the first public release of ScanCodes.
 
-### ✨ New Features
+### ✨ Features
 
 * `ScanCode` can render any string as a scan code.
 * `Image` can be initialized with a scan code value.

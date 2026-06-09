@@ -9,6 +9,7 @@ import Testing
     #expect(result(for: .code128) == "CICode128BarcodeGenerator")
     #expect(result(for: .pdf417) == "CIPDF417BarcodeGenerator")
     #expect(result(for: .qr) == "CIQRCodeGenerator")
+    #expect(result(for: .qrRounded) == "CIRoundedQRCodeGenerator")
 }
 
 @Test func scanCodeTypeHasBarcodeAlias() async throws {

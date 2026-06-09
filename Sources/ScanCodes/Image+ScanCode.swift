@@ -127,11 +127,15 @@ private extension ImageRepresentable {
 #Preview {
     
     VStack {
-        Image(scanCode: "123456789", type: .aztek, scale: 5)
-        Image(scanCode: "123456789", type: .barcode, scale: 2, rotation: .pi/4)
-        Image(scanCode: "123456789", type: .code128, scale: 2)
-        Image(scanCode: "123456789", type: .pdf417, scale: 2)
-        Image(scanCode: "123456789", type: .qr, scale: 5)
+        Group {
+            Image(scanCode: "123456789", type: .aztek, scale: 5)?.resizable()
+            Image(scanCode: "123456789", type: .barcode, scale: 2, rotation: .pi/4)?.resizable()
+            Image(scanCode: "123456789", type: .code128, scale: 2)?.resizable()
+            Image(scanCode: "123456789", type: .pdf417, scale: 2)?.resizable()
+            Image(scanCode: "123456789", type: .qr, scale: 5)?.resizable()
+            Image(scanCode: "123456789", type: .qrRounded, scale: 5)?.resizable()
+        }
+        .aspectRatio(contentMode: .fit)
     }
 }
 #endif

@@ -42,7 +42,9 @@ public struct ScanCode: View {
             type: type,
             scale: scale,
             rotation: rotation
-        )?.resizable().scaledToFit()
+        )?
+            .resizable()
+            .scaledToFit()
     }
 }
 

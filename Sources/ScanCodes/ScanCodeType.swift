@@ -19,9 +19,12 @@ public enum ScanCodeType: String, CaseIterable, Identifiable {
     
     /// A `PDF-417` scan code.
     case pdf417
-    
+
     /// A standard `QR` code.
     case qr
+
+    /// A `QR` code with rounded corners.
+    case qrRounded
 }
 
 public extension ScanCodeType {
@@ -45,6 +48,7 @@ public extension ScanCodeType {
         case .code128: "CICode128BarcodeGenerator"
         case .pdf417: "CIPDF417BarcodeGenerator"
         case .qr: "CIQRCodeGenerator"
+        case .qrRounded: "CIRoundedQRCodeGenerator"
         }
     }
 }

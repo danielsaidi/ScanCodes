@@ -12,13 +12,11 @@
 
 # ScanCodes
 
-ScanCodes is a Swift library with scan code features, such as a ``ScanCode`` SwiftUI view that can render any string value as a scan code.
+ScanCodes is a Swift library with scan code-related features for SwiftUI, like a ``ScanCode``  and ``CodeScannerView`` that can scan QR and barcodes directly into your app.
 
 <p align="center">
     <img src="https://github.com/danielsaidi/ScanCodes/releases/download/0.1.0/ScanCodes-Demo-Picker.gif" alt="Demo Gif" width="300" />
 </p>
-
-ScanCodes extends ``Image`` as well as platform-specific image types with scan code-related functionality, and has a ``ScanCodeType`` enum that defines all supported scan code types.
 
 
 ## Installation
@@ -53,7 +51,25 @@ struct ContentView: View {
 }
 ```
 
-You can use the same init arguments to create a SwiftUI ``SwiftUICore/Image`` and platform-specific image values.
+To add a QR and barcode scanner to your app, that looks for codes to scan, just use the ``CodeScanner`` view: 
+
+```swift
+struct ContentView: View {
+
+    @State var code: String?
+
+    var body: some View {
+        CodeScannerView(
+            code: $code,
+            viewfinder: {
+                CodeScannerViewfinder()   
+            }
+        )
+    }
+}
+```
+
+The code scanner and its viewfinder can be customized to great extent. See the documentation for more details.
 
 
 ## Documentation
